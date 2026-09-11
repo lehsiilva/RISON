@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'screens/welcome_screen.dart';
+import 'package:rison/screens/historico_screen.dart';
+import 'package:rison/screens/main_screen.dart';
+import 'package:rison/screens/welcome_screen.dart';
+import 'screens/listaMusica_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: MainScreen(),
     );
   }
 }
