@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-/// Cores extraídas do design (Rison App).
 class AppColors {
   AppColors._();
 
-  // Fundo
   static const Color purple = Color(0xFF4C338F);
   static const Color black = Color(0xFF000000);
 
-  // Barras / inputs
   static const Color white = Color(0xFFFFFFFF);
   static const Color gray = Color(0xFF9B9B9B);
 
@@ -24,7 +21,6 @@ class AppColors {
     colors: [white, gray],
   );
 
-  // Roxo mais claro, usado em destaques e no gradiente de botão
   static const Color purpleLight = Color(0xFF8B6FC7);
 
   static const LinearGradient buttonGradient = LinearGradient(

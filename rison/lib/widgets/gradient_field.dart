@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
 
-/// Campo de texto estilizado como a barra em gradiente
-/// branco -> cinza que aparece no mockup.
 class GradientTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;

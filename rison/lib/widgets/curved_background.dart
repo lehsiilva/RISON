@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Desenha as duas linhas curvas (tipo "olho") que aparecem
-/// atrás das telas de login/cadastro no mockup.
 class ArcLinesPainter extends CustomPainter {
   const ArcLinesPainter();
 
@@ -12,7 +10,6 @@ class ArcLinesPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.2;
 
-    // Arco superior (curva para baixo, tipo sobrancelha)
     final topPath = Path()
       ..moveTo(0, size.height * 0.16)
       ..quadraticBezierTo(
@@ -22,7 +19,6 @@ class ArcLinesPainter extends CustomPainter {
         size.height * 0.16,
       );
 
-    // Arco inferior (curva para cima, tipo sorriso)
     final bottomPath = Path()
       ..moveTo(0, size.height * 0.84)
       ..quadraticBezierTo(

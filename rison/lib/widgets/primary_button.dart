@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
 
-/// Botão principal usado em welcome, login e cadastro —
-/// gradiente roxo, cantos arredondados e leve sombra.
 class PrimaryButton extends StatelessWidget {
   final String label;
   final VoidCallback onPressed;
@@ -18,7 +16,6 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!filled) {
-      // Variante "outline", usada para a ação secundária (ex: Criar conta)
       return SizedBox(
         width: double.infinity,
         height: 52,

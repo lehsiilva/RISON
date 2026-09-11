@@ -25,7 +25,6 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _handleLogin() {
-    // TODO: integrar com a lógica/backend de autenticação do time
     final email = _emailController.text.trim();
     final senha = _senhaController.text;
     debugPrint('login: $email / senha com ${senha.length} caracteres');
@@ -97,9 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {
-                          // TODO: fluxo de recuperação de senha
-                        },
+                        onPressed: () {},
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           minimumSize: const Size(0, 36),

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
 
-/// Item de histórico exibido na listagem.
-/// Substituir a fonte de dados (ex.: [_mock]) pela integração real
-/// com o backend/banco local do projeto.
 class HistoricoItem {
   final String data;
   final String descricao;
@@ -14,7 +11,6 @@ class HistoricoItem {
 class HistoricoScreen extends StatelessWidget {
   const HistoricoScreen({super.key});
 
-  // Dados de exemplo — troque por dados vindos da API/banco local.
   static final List<HistoricoItem> _mock = List.generate(
     4,
     (index) => const HistoricoItem(

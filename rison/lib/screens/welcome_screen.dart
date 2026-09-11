@@ -5,8 +5,6 @@ import '../widgets/primary_button.dart';
 import 'login_screen.dart';
 import 'cadastro_screen.dart';
 
-/// Primeira tela do app: logo + tagline, com as duas ações
-/// que levam para login ou cadastro.
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -20,7 +18,6 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             children: [
               const Spacer(flex: 3),
-              // Logo: ícone com onda de som dentro de um "O", como no mockup
               Stack(
                 alignment: Alignment.center,
                 children: [

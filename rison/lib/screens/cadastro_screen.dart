@@ -26,7 +26,6 @@ class _CadastroScreenState extends State<CadastroScreen> {
   }
 
   void _handleCadastro() {
-    // TODO: integrar com a lógica/backend de cadastro do time
     final nome = _nomeController.text.trim();
     final email = _emailController.text.trim();
     debugPrint('cadastro: $nome / $email');
