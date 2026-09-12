@@ -8,27 +8,40 @@ class Musica {
   final String artista;
   final String imagem;
   final String duracao;
+  bool favorita;
 
-  const Musica({
+  Musica({
     required this.titulo,
     required this.artista,
     required this.imagem,
     required this.duracao,
+    this.favorita = false,
   });
 }
 
-class ListaMusicaScreen extends StatelessWidget {
+class ListaMusicaScreen extends StatefulWidget {
   const ListaMusicaScreen({super.key});
 
-  static final List<Musica> _mock = List.generate(
+  @override
+  State<ListaMusicaScreen> createState() => _ListaMusicaScreenState();
+}
+
+class _ListaMusicaScreenState extends State<ListaMusicaScreen> {
+  final List<Musica> _mock = List.generate(
     5,
-    (index) => const Musica(
+    (index) => Musica(
       titulo: 'Ouro de Tolo',
       artista: 'Marina sena',
       imagem: 'assets/images/capaPadrao.png',
       duracao: '3:45',
     ),
   );
+
+  void _toggleFavorita(int index) {
+    setState(() {
+      _mock[index].favorita = !_mock[index].favorita;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +72,10 @@ class ListaMusicaScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Expanded(
-                  // a lista ocupa o espaço restante da tela
                   child: ListView.separated(
                     itemCount: _mock.length,
                     separatorBuilder: (context, index) => const Divider(
-                      color: AppColors.white, // linha branca bem transparente
+                      color: AppColors.white,
                       thickness: 1,
                     ),
                     itemBuilder: (context, index) {
@@ -86,21 +98,36 @@ class ListaMusicaScreen extends StatelessWidget {
                           musica.artista,
                           style: const TextStyle(color: AppColors.white),
                         ),
-                        trailing: Text(
-                          musica.duracao,
-                          style: const TextStyle(color: AppColors.white),
+                        trailing: Column(
+                          mainAxisSize: MainAxisSize.min, // ocupa só o espaço necessário
+                          children: [
+                            Text(
+                              musica.duracao,
+                              style: const TextStyle(color: AppColors.white),
+                            ),
+                            const SizedBox(height: 4), // espaço entre duração e coração
+                            GestureDetector(
+                              onTap: () => _toggleFavorita(index),
+                              child: Icon(
+                                musica.favorita
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                color: musica.favorita
+                                    ? AppColors.lightPurple
+                                    : AppColors.gray,
+                                size: 20,
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     },
                   ),
                 ),
-
                 const SizedBox(height: 16),
                 PrimaryButton(
                   label: 'Ouvir Agora',
-                  onPressed: () {
-                    // sua ação aqui, ex: abrir playlist
-                  },
+                  onPressed: () {},
                 ),
                 const SizedBox(height: 30),
               ],
@@ -132,8 +159,7 @@ class ListaMusicaScreen extends StatelessWidget {
             style: GoogleFonts.anticDidone(
               fontSize: 24,
               fontWeight: FontWeight.normal,
-              color: Colors
-                  .white, // precisa de uma cor aqui, o ShaderMask usa ela como base
+              color: Colors.white,
             ),
           ),
         ),
