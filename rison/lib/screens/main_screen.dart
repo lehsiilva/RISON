@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rison/screens/favoritos_screen.dart';
 import 'package:rison/screens/listaMusica_screen.dart';
 import 'package:rison/screens/perfil_screen.dart';
+import 'package:rison/screens/home_screen.dart';
 import 'package:rison/theme/app_colors.dart';
 import 'package:rison/widgets/app_bottom_nav_bar.dart';
 
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = const [
-    Placeholder(), //home
+    HomeScreen(), //home
     ListaMusicaScreen(),
     FavoritosScreen(), //favoritos
     PerfilScreen(), //perfil
