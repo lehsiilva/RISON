@@ -3,6 +3,8 @@ import '../theme/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'historico_screen.dart';
 import 'login_screen.dart'; 
+import 'dadosPessoais_screen.dart';
+import 'planos_screen.dart';
 
 class OpcaoPerfil {
   final IconData icone;
@@ -40,14 +42,24 @@ class _PerfilScreenState extends State<PerfilScreen> {
       MaterialPageRoute(builder: (context) => const LoginScreen()),
     );
   }
+  void _irParaDadosPessoais() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const DadosPessoaisScreen()),
+    );
+  }
+  void _irParaPlanos() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const PlanosScreen()),
+    );
+  }
 
   late final List<OpcaoPerfil> _opcoes = [
     OpcaoPerfil(
       icone: Icons.person_outline,
-      titulo: 'Editar perfil',
-      onTap: () {
-        // navegação futura pra tela de editar perfil
-      },
+      titulo: 'Dados Pessoais',
+      onTap: _irParaDadosPessoais,
     ),
     OpcaoPerfil(
       icone: Icons.history,
@@ -57,9 +69,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
     OpcaoPerfil(
       icone: Icons.workspace_premium_outlined,
       titulo: 'Planos',
-      onTap: () {
-        // navegação futura pra tela de planos
-      },
+      onTap: _irParaPlanos,
     ),
     OpcaoPerfil(
       icone: Icons.logout,
